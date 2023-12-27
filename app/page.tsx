@@ -13,6 +13,8 @@ export default function Home() {
   const [option6, setoprtion6] = useState("");
   const [option7, setoprtion7] = useState("");
   const [option8, setoprtion8] = useState("");
+  const [gift, setGift] = useState("");
+
   const [click, setClick] = useState("");
   const [loading, setloading] = useState(true);
 
@@ -65,7 +67,7 @@ export default function Home() {
       if (countYes >= 7) {
         Swal.fire({
           title: 'Hurray, thanks for your response! ',
-          text: 'You are a Blended Champ! Keep Up the Good Work in 2024. Take Every Chance to Encourage Your Teammates to Participate in the Blended Behaviours.Click to Avail Your Gift..',
+          text: `Your score is ${countYes} out of 8!! You are a Blended Champ! Keep Up the Good Work in 2024. Take Every Chance to Encourage Your Teammates to Participate in the Blended Behaviours.`,
           icon: 'success', 
           confirmButtonText: 'Okay',
         });
@@ -73,20 +75,22 @@ export default function Home() {
       else if (countYes > 4) {
         Swal.fire({
           title: 'Hurray, thanks for your response! ',
-          text: 'You are a Blended Proficient! You are Doing Good with Scope for Improvement in 2024. So, Take Some Resolutions & Become a Blended Expert with the Right Behaviours.Click to Avail Your Gift.',
+          
+          text: ` Your score is ${countYes} out of 8!! You are a Blended Proficient! You are Doing Good with Scope for Improvement in 2024. So, Take Some Resolutions & Become a Blended Expert with the Right Behaviours.`,
           icon: 'success', 
           confirmButtonText: 'Okay',
         });
       } else if (countYes <= 4) {
         Swal.fire({
           title: 'Hurray, thanks for your response! ',
-          text: 'You are a Blended Newbie! Commit to the Blended Behaviours in 2024 & Take Your Work Experience to the Next Level with our Tenets. Click to Avail Your Gift.',
+          text: `Your score is ${countYes} out of 8!!  You are a Blended Newbie! Commit to the Blended Behaviours in 2024 & Take Your Work Experience to the Next Level with our Tenets.`,
           icon: 'success', 
           confirmButtonText: 'Okay',
         });
 
       }
-      setClick(" Click to Avail Your Gift.");
+      setGift("Thank you! Click here to avail your gift.")
+      setClick("/image/gif.gif");
 
 
 
@@ -104,7 +108,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="bg-gradient-to-r from-red-300 to-orange-100 flex flex-col items-center justify-center h-screen">
+      <div className="bg-gradient-to-r from-red-300 to-orange-100 flex flex-col items-center justify-center h-auto py-20">
         <h1 className="text-[2rem] py-2 font-semibold"> Future of Work</h1>
         <form
         action="/"
@@ -228,8 +232,10 @@ export default function Home() {
             onSubmit={handleSubmit}
             className="bg-green-500 text-white p-2 w-full rounded cursor-pointer"
           />
+         {/* <h1 className="pt-3">{click}</h1> */}
+         <img  className="flex justify-center mx-auto cursor-pointer" src={click} />
+<h1 className="pt-4 flex justify-center capitalize text-orange-500 font-bold">{gift}</h1>
 
-         <h1 className="pt-3">{click}</h1>
         </form>
       </div>
     </>
