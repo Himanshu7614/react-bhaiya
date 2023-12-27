@@ -158,7 +158,7 @@ export default function Home() {
               }}
               className="mr-2"
             />
-            I am a team player - working towards the team's overall success.
+            I am a team player - working towards the teams overall success.
           </label>
           <label className="block mb-4">
             <input
